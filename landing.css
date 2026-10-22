@@ -1,0 +1,413 @@
+/* ===== Página pública ===== */
+
+/* ----- Cabecera ----- */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--asfalto);
+  color: var(--blanco);
+  border-bottom: 4px solid var(--amarillo);
+}
+.cabecera__fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+.cabecera__menu {
+  display: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 8px;
+  cursor: pointer;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-weight: 600;
+}
+.nav a { text-decoration: none; padding-block: 6px; }
+.nav a:hover { color: var(--amarillo); }
+.nav .nav__campus {
+  padding: 8px 16px 6px;
+  border: 2px solid var(--amarillo);
+  border-radius: var(--radio);
+  color: var(--amarillo);
+}
+.nav .nav__campus:hover { background: var(--amarillo); color: var(--tinta); }
+
+/* ----- Hero ----- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--asfalto);
+  color: var(--blanco);
+  padding-block: 88px 104px;
+}
+/* Línea discontinua de carril que se dibuja al cargar */
+.hero__carril {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  transform: translateX(-50%);
+  opacity: .5;
+}
+.hero__carril line {
+  stroke: var(--blanco);
+  stroke-width: 6;
+  stroke-dasharray: 46 34;
+  animation: carril 1.6s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes carril {
+  from { stroke-dashoffset: 800; opacity: 0; }
+  to   { stroke-dashoffset: 0; opacity: 1; }
+}
+.hero__fila {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 96px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(2.3rem, 4.6vw, 3.9rem);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  max-width: 15ch;
+}
+.hero__intro {
+  margin-top: 24px;
+  font-size: 1.2rem;
+  max-width: 42ch;
+  color: #d6dbe1;
+}
+.hero__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+.hero__valoracion {
+  margin-top: 28px;
+  color: #c3c9d0;
+  font-size: .95rem;
+}
+.hero__valoracion strong { color: var(--blanco); }
+.estrellas { color: var(--amarillo); letter-spacing: 2px; margin-right: 6px; }
+
+/* ----- Cartel de orientación ----- */
+.cartel {
+  background: var(--azul);
+  border-radius: 14px;
+  padding: 10px;
+  box-shadow: 0 24px 50px -20px rgba(0,0,0,.6);
+  transform: rotate(-1.5deg);
+}
+.cartel__marco {
+  border: 4px solid var(--blanco);
+  border-radius: 8px;
+  padding: 10px 6px 18px;
+}
+.cartel__destino {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.cartel__destino + .cartel__destino { border-top: 3px solid rgba(255,255,255,.85); }
+.cartel__destino:hover { background: var(--azul-oscuro); }
+.cartel__destino strong {
+  display: block;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.cartel__destino small { font-size: 1rem; color: #cfe0f7; }
+.cartel__flecha { width: 44px; height: 44px; flex: none; fill: var(--blanco); }
+.cartel__flecha--dcha { transform: rotate(90deg); }
+.cartel__pie {
+  margin: 8px 20px 0;
+  padding: 10px 14px 8px;
+  background: var(--blanco);
+  color: var(--azul);
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: .95rem;
+  text-align: center;
+}
+
+/* ----- Secciones ----- */
+.seccion { padding-block: 96px; scroll-margin-top: 72px; }
+.seccion--blanca { background: var(--blanco); }
+.seccion--asfalto { background: var(--asfalto); color: var(--blanco); }
+.seccion--azul { background: var(--azul); color: var(--blanco); }
+
+.seccion__cabeza { max-width: 640px; margin-bottom: 48px; }
+.seccion__cabeza h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); font-weight: 900; }
+.seccion__cabeza p { margin-top: 14px; color: var(--gris); font-size: 1.1rem; }
+
+/* ----- Permisos ----- */
+.permisos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.permiso {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--blanco);
+  border: 2px solid var(--linea);
+  border-radius: 10px;
+  padding: 24px;
+}
+.permiso h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+.permiso p { color: var(--gris); font-size: 1rem; }
+.permiso__letra {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  height: 64px;
+  padding: 4px 10px 0;
+  background: var(--azul);
+  color: var(--blanco);
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+.permiso--destacado {
+  grid-row: span 3;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--amarillo);
+  border-color: var(--amarillo);
+  padding: 32px;
+}
+.permiso--destacado .permiso__letra {
+  min-width: 120px;
+  height: 120px;
+  font-size: 4.5rem;
+  background: var(--tinta);
+  color: var(--amarillo);
+}
+.permiso--destacado h3 { font-size: 2rem; }
+.permiso--destacado p { color: var(--tinta); font-size: 1.1rem; max-width: 34ch; }
+
+/* ----- Ruta del alumno ----- */
+.ruta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  counter-reset: paso;
+  position: relative;
+}
+/* carretera que une los pasos */
+.ruta::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: 28px;
+  right: 28px;
+  height: 14px;
+  background:
+    linear-gradient(90deg, var(--blanco) 50%, transparent 0) 0 50% / 28px 3px repeat-x,
+    var(--asfalto);
+  border-radius: 7px;
+}
+.ruta__paso { position: relative; counter-increment: paso; padding-top: 92px; }
+/* número dentro de un rombo, como las señales de aviso */
+.ruta__paso::before,
+.ruta__paso::after {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 56px;
+  height: 56px;
+}
+.ruta__paso::before {
+  content: "";
+  background: var(--amarillo);
+  border: 3px solid var(--tinta);
+  border-radius: 6px;
+  transform: rotate(45deg);
+}
+.ruta__paso::after {
+  content: counter(paso);
+  display: grid;
+  place-items: center;
+  padding-top: 4px;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+.ruta__paso h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; }
+.ruta__paso p { color: var(--gris); font-size: 1rem; max-width: 34ch; }
+
+/* ----- Opiniones ----- */
+.opiniones {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+  align-items: center;
+}
+.opiniones__numero {
+  font-size: clamp(6rem, 13vw, 10rem);
+  font-weight: 900;
+  line-height: .9;
+  color: var(--amarillo);
+  letter-spacing: -0.04em;
+}
+.opiniones__nota p:last-child { color: #c3c9d0; margin-top: 8px; }
+.opiniones__lista h2 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 900; margin-bottom: 24px; }
+.opiniones__lista ul { list-style: none; margin: 0; padding: 0; }
+.opiniones__lista li {
+  padding: 18px 0;
+  border-top: 2px dashed rgba(255,255,255,.25);
+  color: #d6dbe1;
+  max-width: 62ch;
+}
+.opiniones__lista li strong { color: var(--blanco); }
+
+/* ----- Centros ----- */
+.centros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.centro,
+.horario {
+  background: var(--blanco);
+  border-radius: 10px;
+  padding: 28px;
+  border-top: 8px solid var(--azul);
+}
+.centro h3,
+.horario h3 { font-size: 1.35rem; font-weight: 800; margin-bottom: 6px; }
+.centro p { color: var(--gris); }
+.centro__mapa {
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 800;
+  color: var(--azul);
+  text-underline-offset: 4px;
+}
+.horario { border-top-color: var(--amarillo); }
+.horario dl { margin: 12px 0 0; }
+.horario dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--linea);
+}
+.horario dt { font-weight: 600; }
+.horario dd { margin: 0; text-align: right; }
+.horario__nota { margin-top: 14px; color: var(--gris); font-size: .9rem; }
+
+/* ----- Promo campus ----- */
+.campus-promo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.campus-promo h2 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); font-weight: 900; }
+.campus-promo p { margin: 16px 0 28px; color: #d6e4f7; font-size: 1.1rem; max-width: 46ch; }
+.campus-promo__lista { list-style: none; margin: 0; padding: 0; }
+.campus-promo__lista li {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 2px solid rgba(255,255,255,.18);
+  font-weight: 600;
+}
+.campus-promo__lista li::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background: var(--amarillo);
+  border-radius: 50%;
+}
+
+/* ----- Pie ----- */
+.pie {
+  background: var(--tinta);
+  color: #c3c9d0;
+  padding-block: 48px;
+  font-size: .95rem;
+}
+.pie__fila {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+}
+.pie .marca { color: var(--blanco); margin-bottom: 10px; }
+.pie a { text-decoration: none; }
+.pie a:hover { color: var(--amarillo); }
+.pie__aviso { flex-basis: 100%; padding-top: 24px; border-top: 1px solid #3a3e44; font-size: .85rem; }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .hero { padding-block: 56px 72px; }
+  .hero__fila { grid-template-columns: 1fr; gap: 48px; }
+  .hero__carril { left: auto; right: 24px; transform: none; }
+  .cartel { transform: none; }
+  .permisos { grid-template-columns: 1fr 1fr; }
+  .permiso--destacado { grid-column: span 2; grid-row: auto; }
+  .ruta { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+  .ruta::before { display: none; }
+  .opiniones,
+  .campus-promo { grid-template-columns: 1fr; gap: 40px; }
+  .centros { grid-template-columns: 1fr 1fr; }
+  .horario { grid-column: span 2; }
+}
+
+@media (max-width: 720px) {
+  .contenedor { padding-inline: 16px; }
+  .cabecera__menu { display: block; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 16px 20px;
+    background: var(--asfalto);
+    border-bottom: 4px solid var(--amarillo);
+  }
+  .nav--abierta { display: flex; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--asfalto-claro); }
+  .nav .nav__campus { margin-top: 12px; text-align: center; padding: 12px; }
+  .cabecera__fila { position: relative; }
+
+  .seccion { padding-block: 64px; }
+  .hero__carril { display: none; }
+  .hero__acciones .boton { width: 100%; }
+  .cartel__destino { padding: 14px 12px; gap: 14px; }
+  .cartel__flecha { width: 34px; height: 34px; }
+  .cartel__pie { margin-inline: 8px; }
+
+  .permisos,
+  .centros { grid-template-columns: 1fr; }
+  .permiso--destacado,
+  .horario { grid-column: auto; }
+  .permiso--destacado .permiso__letra { min-width: 88px; height: 88px; font-size: 3.2rem; }
+
+  .ruta { grid-template-columns: 1fr; row-gap: 36px; }
+}

@@ -1,0 +1,121 @@
+/* ===== Autoescuela Zabalo · estilos compartidos ===== */
+
+:root {
+  --asfalto: #2a2d31;
+  --asfalto-claro: #3a3e44;
+  --azul: #0b4ea2;
+  --azul-oscuro: #083a7a;
+  --amarillo: #ffc72c;
+  --verde: #1e7b45;
+  --blanco: #ffffff;
+  --papel: #f3f5f7;
+  --tinta: #1a1d21;
+  --gris: #5b636d;
+  --linea: #d9dee4;
+
+  --fuente: "Overpass", system-ui, sans-serif;
+  --ancho: 1180px;
+  --radio: 6px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--tinta);
+  background: var(--papel);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+h1, h2, h3 { line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+
+p { margin: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--amarillo);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.oculto {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ----- Marca: la placa L ----- */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+.marca__placa {
+  display: grid;
+  place-items: center;
+  width: 34px; height: 34px;
+  background: var(--verde);
+  color: var(--blanco);
+  border: 2px solid var(--blanco);
+  outline: 2px solid var(--verde);
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 1.15rem;
+  line-height: 1;
+  padding-top: 3px;
+}
+
+/* ----- Botones ----- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px 10px;
+  border-radius: var(--radio);
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s, color .15s, border-color .15s;
+}
+.boton--amarillo { background: var(--amarillo); color: var(--tinta); }
+.boton--amarillo:hover { background: #ffd65e; }
+.boton--azul { background: var(--azul); color: var(--blanco); }
+.boton--azul:hover { background: var(--azul-oscuro); }
+.boton--borde { border-color: currentColor; background: transparent; }
+.boton--borde:hover { background: rgba(255,255,255,.1); }
+.boton svg { width: 20px; height: 20px; flex: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
