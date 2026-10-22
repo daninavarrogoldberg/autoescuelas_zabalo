@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoescuela Zabalo · Gijón</title>
+  <meta name="description" content="Autoescuela en Gijón con dos centros: Avenida de Schulz y Carretera del Obispo. Permisos B, A1, A2 y CAP.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+
+  <!-- AVISO: maqueta de prueba. Teléfonos, direcciones y horario sacados de directorios públicos; confirmar con la autoescuela. -->
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <a class="marca" href="index.html" aria-label="Autoescuela Zabalo, inicio">
+        <span class="marca__placa" aria-hidden="true">L</span>
+        Zabalo
+      </a>
+      <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="nav-principal">
+        <span class="oculto">Abrir menú</span>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+      <nav id="nav-principal" class="nav" aria-label="Principal">
+        <a href="#permisos">Permisos</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a href="#centros">Centros y horario</a>
+        <a class="nav__campus" href="campus.html">Campus alumnos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO: carretera + cartel de dirección -->
+    <section class="hero">
+      <svg class="hero__carril" viewBox="0 0 40 800" preserveAspectRatio="none" aria-hidden="true">
+        <line x1="20" y1="0" x2="20" y2="800" />
+      </svg>
+
+      <div class="contenedor hero__fila">
+        <div class="hero__texto">
+          <h1>Sácate el carnet en Gijón, con gente que te conoce por tu nombre.</h1>
+          <p class="hero__intro">Autoescuela de barrio en Moreda. Teórico, prácticas y examen, con el mismo equipo de principio a fin.</p>
+          <div class="hero__acciones">
+            <a class="boton boton--amarillo" href="https://wa.me/34691849165" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z"/></svg>
+              Escríbenos por WhatsApp
+            </a>
+            <a class="boton boton--borde" href="tel:+34985358101">Llamar al 985 35 81 01</a>
+          </div>
+          <p class="hero__valoracion">
+            <span class="estrellas" aria-hidden="true">★★★★★</span>
+            <strong>4,6</strong> en Google, con 39 opiniones de alumnos
+          </p>
+        </div>
+
+        <!-- Cartel azul de orientación, como los de carretera -->
+        <aside class="cartel" aria-label="Nuestros dos centros">
+          <div class="cartel__marco">
+            <a class="cartel__destino" href="#centros">
+              <svg class="cartel__flecha" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 6 20h9v16h10V20h9Z"/></svg>
+              <span>
+                <strong>Av. de Schulz, 11</strong>
+                <small>Moreda, centro principal</small>
+              </span>
+            </a>
+            <a class="cartel__destino" href="#centros">
+              <svg class="cartel__flecha cartel__flecha--dcha" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 6 20h9v16h10V20h9Z"/></svg>
+              <span>
+                <strong>Ctra. del Obispo, 6</strong>
+                <small>Segundo centro</small>
+              </span>
+            </a>
+            <p class="cartel__pie">Lunes a viernes, 10:00–13:30 y 16:30–20:30</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PERMISOS -->
+    <section id="permisos" class="seccion">
+      <div class="contenedor">
+        <div class="seccion__cabeza">
+          <h2>¿Qué carnet quieres sacarte?</h2>
+          <p>Preparamos el teórico y el práctico de cada permiso. Pregúntanos por matrícula y paquetes de clases: te damos el precio cerrado antes de empezar.</p>
+        </div>
+
+        <div class="permisos">
+          <article class="permiso permiso--destacado">
+            <span class="permiso__letra">B</span>
+            <div>
+              <h3>Coche</h3>
+              <p>El carnet de siempre. Desde los 18 años, con clases prácticas por Gijón y recorridos de examen.</p>
+            </div>
+          </article>
+          <article class="permiso">
+            <span class="permiso__letra">A2</span>
+            <div>
+              <h3>Moto hasta 35 kW</h3>
+              <p>Desde los 18. Pista cerrada y circulación, con moto de la autoescuela.</p>
+            </div>
+          </article>
+          <article class="permiso">
+            <span class="permiso__letra">A1</span>
+            <div>
+              <h3>Moto hasta 125 cc</h3>
+              <p>Desde los 16. Para moverte por la ciudad sin depender de nadie.</p>
+            </div>
+          </article>
+          <article class="permiso">
+            <span class="permiso__letra">CAP</span>
+            <div>
+              <h3>Conductor profesional</h3>
+              <p>Cualificación inicial y formación continua para transporte de mercancías y viajeros.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO: sí es una secuencia -->
+    <section id="proceso" class="seccion seccion--blanca">
+      <div class="contenedor">
+        <div class="seccion__cabeza">
+          <h2>Del primer día al examen práctico</h2>
+          <p>Así es el camino para sacarte el B con nosotros.</p>
+        </div>
+
+        <ol class="ruta">
+          <li class="ruta__paso">
+            <h3>Te apuntas</h3>
+            <p>Vienes a cualquiera de los dos centros, o nos escribes. Te explicamos plazos, precio y papeles.</p>
+          </li>
+          <li class="ruta__paso">
+            <h3>Estudias el teórico</h3>
+            <p>Clases en el aula y tests en el campus online, desde el móvil y a tu ritmo.</p>
+          </li>
+          <li class="ruta__paso">
+            <h3>Aprobado el teórico, al coche</h3>
+            <p>Clases prácticas con tu profesor, en horarios que encajan con tus estudios o tu trabajo.</p>
+          </li>
+          <li class="ruta__paso">
+            <h3>Examen práctico</h3>
+            <p>Cuando estés listo, no antes. Practicamos los recorridos que suele pedir la DGT en Gijón.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- OPINIONES (temas resumidos de reseñas públicas) -->
+    <section class="seccion seccion--asfalto">
+      <div class="contenedor opiniones">
+        <div class="opiniones__nota">
+          <p class="opiniones__numero">4,6</p>
+          <p>de media en Google con 39 opiniones</p>
+        </div>
+        <div class="opiniones__lista">
+          <h2>Lo que más repiten nuestros alumnos</h2>
+          <ul>
+            <li><strong>Profesores con paciencia.</strong> Si empiezas con nervios, se adaptan a ti hasta que vas suelto.</li>
+            <li><strong>Trato cercano en la oficina.</strong> Te resuelven papeleo, citas y dudas sin hacerte dar vueltas.</li>
+            <li><strong>Clases prácticas que sirven.</strong> Se nota cuando llegas al examen.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENTROS -->
+    <section id="centros" class="seccion">
+      <div class="contenedor">
+        <div class="seccion__cabeza">
+          <h2>Dos centros en Gijón</h2>
+          <p>Ven al que te pille más cerca. El horario es el mismo en los dos.</p>
+        </div>
+
+        <div class="centros">
+          <article class="centro">
+            <h3>Avenida de Schulz, 11</h3>
+            <p>33208 Gijón, barrio de Moreda</p>
+            <a class="centro__mapa" href="https://www.google.com/maps/search/?api=1&query=Avenida+de+Schulz+11+33208+Gij%C3%B3n" target="_blank" rel="noopener">Ver en Google Maps</a>
+          </article>
+          <article class="centro">
+            <h3>Carretera del Obispo, 6</h3>
+            <p>33210 Gijón</p>
+            <a class="centro__mapa" href="https://www.google.com/maps/search/?api=1&query=Carretera+del+Obispo+6+33210+Gij%C3%B3n" target="_blank" rel="noopener">Ver en Google Maps</a>
+          </article>
+          <div class="horario">
+            <h3>Horario de oficina</h3>
+            <dl>
+              <div><dt>Lunes a viernes</dt><dd>10:00–13:30<br>16:30–20:30</dd></div>
+              <div><dt>Sábado y domingo</dt><dd>Cerrado</dd></div>
+            </dl>
+            <p class="horario__nota">Las clases prácticas pueden tener otros horarios. Pregúntanos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAMPUS -->
+    <section class="seccion seccion--azul">
+      <div class="contenedor campus-promo">
+        <div>
+          <h2>Tu campus, en el bolsillo</h2>
+          <p>Si ya eres alumno, entra con tu DNI para hacer tests, ver tus clases prácticas reservadas y descargar el material.</p>
+          <a class="boton boton--amarillo" href="campus.html">Entrar al campus</a>
+        </div>
+        <ul class="campus-promo__lista">
+          <li>Tests de teórico por temas y simulacros de examen</li>
+          <li>Tu progreso, tema a tema</li>
+          <li>Calendario de prácticas con tu profesor</li>
+          <li>Apuntes, vídeos y avisos de la autoescuela</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <div>
+        <a class="marca" href="index.html"><span class="marca__placa" aria-hidden="true">L</span>Zabalo</a>
+        <p>Autoescuela en Gijón, Asturias.</p>
+      </div>
+      <div>
+        <p><a href="tel:+34985358101">985 35 81 01</a></p>
+        <p><a href="https://wa.me/34691849165" target="_blank" rel="noopener">WhatsApp 691 84 91 65</a></p>
+      </div>
+      <p class="pie__aviso">Web de prueba. Datos pendientes de confirmar con la autoescuela.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil
+    const botonMenu = document.querySelector('.cabecera__menu');
+    const nav = document.getElementById('nav-principal');
+    botonMenu.addEventListener('click', () => {
+      const abierto = botonMenu.getAttribute('aria-expanded') === 'true';
+      botonMenu.setAttribute('aria-expanded', String(!abierto));
+      nav.classList.toggle('nav--abierta', !abierto);
+    });
+    nav.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        botonMenu.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('nav--abierta');
+      }
+    });
+  </script>
+</body>
+</html>

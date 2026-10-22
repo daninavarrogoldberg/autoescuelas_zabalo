@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi campus · Autoescuela Zabalo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="campus.css">
+</head>
+<body class="panel">
+
+  <!-- Maqueta visual: todos los datos del alumno son de ejemplo -->
+
+  <aside class="lateral">
+    <a class="marca" href="index.html"><span class="marca__placa" aria-hidden="true">L</span>Zabalo</a>
+    <nav class="lateral__nav" aria-label="Campus">
+      <a href="panel.html" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Inicio
+      </a>
+      <a href="#teorico">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12l4 4v12H4zM8 11h8M8 15h8M8 7h5"/></svg>Tests de teórico
+      </a>
+      <a href="#practicas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15h14l-2-6H7zM5 15v4h3v-2h8v2h3v-4M7.5 13h.01M16.5 13h.01"/></svg>Clases prácticas
+      </a>
+      <a href="#material">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6l2 2h8v12H4z"/></svg>Material
+      </a>
+      <a href="#avisos">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Avisos
+        <span class="lateral__contador">2</span>
+      </a>
+    </nav>
+    <a class="lateral__salir" href="campus.html">Cerrar sesión</a>
+  </aside>
+
+  <main class="contenido">
+    <header class="contenido__cabeza">
+      <div>
+        <h1>Hola, Lucía</h1>
+        <p>Permiso B, matriculada en Av. de Schulz</p>
+      </div>
+      <a class="boton boton--azul" href="#teorico">Hacer un test</a>
+    </header>
+
+    <!-- Progreso como carretera: lo memorable del panel -->
+    <section class="tarjeta progreso" aria-labelledby="progreso-titulo">
+      <div class="progreso__cabeza">
+        <h2 id="progreso-titulo">Tu camino hacia el carnet</h2>
+        <p><strong>Teórico</strong>, 68 % del temario superado</p>
+      </div>
+      <div class="carretera" role="img" aria-label="Matrícula hecha, teórico en curso con el 68 % superado, prácticas y examen pendientes">
+        <div class="carretera__avance" style="--avance: 23%"></div>
+        <span class="carretera__coche" style="--avance: 23%">
+          <svg viewBox="0 0 48 24" aria-hidden="true"><path d="M6 16h36v-4l-6-1-6-6H16l-6 6-4 1z" fill="#ffc72c" stroke="#1a1d21" stroke-width="2"/><circle cx="14" cy="17" r="4" fill="#1a1d21"/><circle cx="34" cy="17" r="4" fill="#1a1d21"/></svg>
+        </span>
+      </div>
+      <ol class="hitos">
+        <li class="hitos__hecho">Matrícula</li>
+        <li class="hitos__actual">Teórico</li>
+        <li>Prácticas</li>
+        <li>Examen práctico</li>
+      </ol>
+    </section>
+
+    <div class="rejilla">
+      <section id="practicas" class="tarjeta proxima">
+        <h2>Próxima clase práctica</h2>
+        <p class="proxima__fecha">Jueves 29 de octubre</p>
+        <p class="proxima__hora">17:30 – 18:15</p>
+        <dl class="proxima__datos">
+          <div><dt>Salida</dt><dd>Av. de Schulz, 11</dd></div>
+          <div><dt>Coche</dt><dd>Seat Ibiza, 4821 LMK</dd></div>
+        </dl>
+        <button class="boton boton--borde-azul" type="button">Cambiar clase</button>
+      </section>
+
+      <section id="teorico" class="tarjeta">
+        <h2>Tus últimos tests</h2>
+        <table class="tests">
+          <thead>
+            <tr><th scope="col">Test</th><th scope="col">Fallos</th><th scope="col">Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Simulacro DGT nº 14</td><td>2</td><td><span class="sello sello--apto">Apto</span></td></tr>
+            <tr><td>Tema 7: Adelantamientos</td><td>4</td><td><span class="sello sello--no">No apto</span></td></tr>
+            <tr><td>Tema 6: Velocidad</td><td>1</td><td><span class="sello sello--apto">Apto</span></td></tr>
+            <tr><td>Simulacro DGT nº 13</td><td>3</td><td><span class="sello sello--apto">Apto</span></td></tr>
+          </tbody>
+        </table>
+        <p class="nota">En el examen de la DGT puedes tener como máximo 3 fallos de 30 preguntas.</p>
+      </section>
+
+      <section id="material" class="tarjeta">
+        <h2>Material de estudio</h2>
+        <ul class="material">
+          <li><span class="material__tipo">PDF</span>Manual del permiso B, temas 1 a 12</li>
+          <li><span class="material__tipo">Vídeo</span>Rotondas: cómo entrar y salir sin dudas</li>
+          <li><span class="material__tipo">PDF</span>Señales que más caen en el examen</li>
+          <li><span class="material__tipo">Vídeo</span>Recorridos de examen en Gijón</li>
+        </ul>
+      </section>
+
+      <section id="avisos" class="tarjeta avisos">
+        <h2>Avisos</h2>
+        <article class="aviso aviso--nuevo">
+          <h3>Fechas de examen teórico en noviembre</h3>
+          <p>Si quieres presentarte, avísanos antes del día 5 para reservar plaza.</p>
+        </article>
+        <article class="aviso aviso--nuevo">
+          <h3>Cambio de horario el 31 de octubre</h3>
+          <p>La oficina de Ctra. del Obispo abre solo por la mañana.</p>
+        </article>
+      </section>
+    </div>
+  </main>
+
+</body>
+</html>
